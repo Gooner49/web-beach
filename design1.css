@@ -1,0 +1,23 @@
+.body{
+
+    color: rgb(85,0,85) ;
+}
+
+p1{
+
+    color: rgb(0,70,0);
+}
+
+.Conclusion {
+
+    color:  rgb(0,82,2);
+}
+
+.Introduction {
+
+    color:  rgb(50,205,50);
+    background-color: rgb(0, 0, 5);
+    padding: 8px;
+    margin:0px
+}
+
