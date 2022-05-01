@@ -1,7 +1,7 @@
 package com.example.demo;
 
 //import org.springframework.data.annotation.Id;
-@Data
+
 //@EqualsAndHashCode(of = {"cId","title"})
 public class Customer {
 

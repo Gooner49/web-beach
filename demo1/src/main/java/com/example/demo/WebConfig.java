@@ -1,5 +1,5 @@
 package com.example.demo;
-import org.springframework.stereotype.Service;
+/*import org.springframework.stereotype.Service;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,9 +18,11 @@ import java.util.*;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.example.demo")
-public class WebConfig implements WebMvcConfigurer
-{
+@ComponentScan("com.example.demo") */
+public class WebConfig // implements WebMvcConfigurer
+{  
+
+    /*
     @Bean
 	public  InternalResourceViewResolver internalResourceViewResolver() 
 	{
@@ -36,5 +38,6 @@ public class WebConfig implements WebMvcConfigurer
         registry.addResourceHandler("/resources/**")
           .addResourceLocations("/resources/"); 
     }
+    */
 
 }

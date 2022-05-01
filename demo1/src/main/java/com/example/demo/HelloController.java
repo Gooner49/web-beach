@@ -26,14 +26,14 @@ public class HelloController {
 
 	@ResponseBody
 	@GetMapping("/viewlist")
-	public List<Customer> view() 
+	public List<Customer> view1() 
 	{
 		return CustomerService.viewAll();
 	}
 
 	@ResponseBody
 	@GetMapping("/viewmodel")
-	public List<Customer> view() 
+	public List<Customer> view2() 
 	{
 		return CustomerService.viewAll();
 	}
