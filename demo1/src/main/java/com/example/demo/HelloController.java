@@ -17,10 +17,11 @@ public class HelloController {
 	{	
 		return "index";
 	}
-	@ResponseBody
-	@GetMapping("/welcome")
+	//@ResponseBody
+	@GetMapping("welcome")
 	public String welcome()
 	{
+		System.out.println("Welcome");
 		return "welcome";
 	}
 
@@ -28,6 +29,7 @@ public class HelloController {
 	@GetMapping("/viewlist")
 	public List<Customer> view1() 
 	{
+		System.out.println("View List Controller created");
 		return CustomerService.viewAll();
 	}
 
@@ -35,6 +37,7 @@ public class HelloController {
 	@GetMapping("/viewmodel")
 	public List<Customer> view2() 
 	{
+		System.out.println("View Model Controller created");
 		return CustomerService.viewAll();
 	}
 

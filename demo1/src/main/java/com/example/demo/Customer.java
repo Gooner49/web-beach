@@ -1,11 +1,14 @@
 package com.example.demo;
 
 //import org.springframework.data.annotation.Id;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 //@EqualsAndHashCode(of = {"cId","title"})
-public class Customer {
+public class Customer
+{
 
-  //@Id
+  @Id
   public Integer cId;
   public String Name;
   //public String lastName;

@@ -9,7 +9,7 @@ public class CustomerService
 	List<Customer> listCust = new ArrayList<>(); 
     public CustomerService () 
 	{
-			System.out.println("Service layer created");
+			System.out.println("Service layer Sankalan created");
 			listCust.add(new Customer(1,"Ashley"));
 			listCust.add(new Customer(2,"Finley"));
 			listCust.add(new Customer(3,"Fang"));
@@ -18,6 +18,7 @@ public class CustomerService
 	public List<Customer> viewAll()
 	{
        return listCust;
+	   
 	} 
 
 	
