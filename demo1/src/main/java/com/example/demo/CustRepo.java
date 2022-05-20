@@ -1,10 +1,13 @@
 package com.example.demo;
-import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
-public interface CustRepo extends CrudRepository<Customer, Integer>
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+@Repository
+public interface CustRepo extends MongoRepository<Customer, String> 
 {
-    List<Customer> findBycId(String lastName);
-    Customer findByName(Integer cId);
-  
+
+  public List<Customer> findByid(String firstName);
+  public List<Customer> findBytitle(String lastName);
+
 }

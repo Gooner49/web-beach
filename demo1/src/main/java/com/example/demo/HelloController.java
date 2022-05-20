@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
 @Controller
+@CrossOrigin(origins="*")
 public class HelloController {
 
 	@Autowired
@@ -27,10 +29,10 @@ public class HelloController {
 
 	@ResponseBody
 	@GetMapping("/viewlist")
-	public List<Customer> view1() 
+	public String view1() 
 	{
 		System.out.println("View List Controller created");
-		return CustomerService.viewAll();
+		return "welcome2";
 	}
 
 	@ResponseBody

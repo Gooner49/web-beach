@@ -7,18 +7,19 @@ import java.util.*;
 public class CustomerService
 {
 	List<Customer> listCust = new ArrayList<>(); 
+	CustRepo custrepo1;
     public CustomerService () 
 	{
 			System.out.println("Service layer Sankalan created");
-			listCust.add(new Customer(1,"Ashley"));
-			listCust.add(new Customer(2,"Finley"));
-			listCust.add(new Customer(3,"Fang"));
-			listCust.add(new Customer(4,"Drey"));
+			listCust.add(new Customer(12,"Ashley","desc","kol"));
+			listCust.add(new Customer(11,"Bradey","desc1","ko1l"));
 	}
 	public List<Customer> viewAll()
 	{
-       return listCust;
-	   
+		List<Customer> listCust1 = new ArrayList<Customer>(); ;
+		custrepo1.findAll().forEach(listCust1::add);
+		System.out.println(listCust1);
+        return listCust;
 	} 
 
 	
