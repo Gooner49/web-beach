@@ -1,16 +1,18 @@
 package com.example.demo;
 //import org.springframework.data.annotation.Id;
-//import javax.persistence.Entity;
+import javax.persistence.Entity;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.Id;
-//@Entity
+import java.math.BigInteger;  
+@Entity
 @Document(collection = "customer")
 //@EqualsAndHashCode(of = {"id","title"})
 public class Customer
 {
 
   @Id
-  public Integer id;
+  public BigInteger Custid;
+
   public String title;
   public String description;
   public String location;
@@ -18,12 +20,12 @@ public class Customer
 
   
   
-  public Customer(Integer id, String Nom ,String desc , String loc ) 
+  public Customer(BigInteger Custid ,String title ,String description , String location ) 
   {
-    this.id = id;    
-    this.title = Nom;
-    this.description = desc;
-    this.location = loc;
+    this.Custid = Custid;        
+    this.title = title;
+    this.description = description;
+    this.location = location;
     //this.lasttitle = lasttitle;
   }
 
