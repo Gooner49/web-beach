@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.math.BigInteger;  
 @Entity
 @Document(collection = "customer")
-//@EqualsAndHashCode(of = {"id","title"})
+
 public class Customer
 {
 
@@ -28,13 +28,5 @@ public class Customer
     this.location = location;
     //this.lasttitle = lasttitle;
   }
-
-
-  /*@Override
-  public String toString() {
-    return String.format(
-        "Customer[id=%s, firsttitle='%s', lasttitle='%s']",
-        id, firsttitle, lasttitle);
-  }*/
 
 }

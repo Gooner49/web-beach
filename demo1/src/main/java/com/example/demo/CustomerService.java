@@ -22,6 +22,7 @@ public class CustomerService
 	{
 	//	List<Customer> listCust1 = new ArrayList<Customer>(); ;
 	    try {
+			listCust.clear();
 			custrepo1.findAll().forEach(listCust::add);;
 			//groceryItemRepo.findAll().forEach(item -> System.out.println(getItemDetails(item)));
 		}
