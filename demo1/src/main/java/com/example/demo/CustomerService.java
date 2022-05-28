@@ -37,5 +37,12 @@ public class CustomerService
 		return listCust;		
 	} 
 
+	public void Addto (Customer cust)
+	{
+	//	
+			System.out.println("Starting to add customer" );
+	}
+			
+
 	
 }
