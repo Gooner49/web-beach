@@ -2,6 +2,9 @@ package com.example.demo;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +45,16 @@ public class HelloController {
 		System.out.println("View Model Controller created");
 		return CustomerService.viewAll();
 	}
+	
+	
+	@ResponseBody
+	@PostMapping("/addCust")
+	public void view2(@RequestBody String Text) 
+	{
+		System.out.println("Hello  " + Text);
+    	CustomerService.AddCust(Text);
+	}
+
 
 
 }
