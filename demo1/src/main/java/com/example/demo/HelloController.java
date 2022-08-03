@@ -39,6 +39,14 @@ public class HelloController {
 	}
 
 	@ResponseBody
+	@GetMapping("/login")
+	public String view_login() 
+	{
+		System.out.println("Login state ");
+		return "Login state";
+	}
+
+	@ResponseBody
 	@GetMapping("/viewmodel")
 	public List<Customer> view2() 
 	{
