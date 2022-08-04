@@ -90,8 +90,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			     <configuration>
-					<mainClass>com.example.demo</mainClass>
-					<start-Class>com.example.demo</start-Class>
+					<mainClass>com.example.demo.DemoApplication</mainClass>
+					<start-Class>com.example.demo.DemoApplication</start-Class>
 				</configuration>
 			</plugin>
 		</plugins>
