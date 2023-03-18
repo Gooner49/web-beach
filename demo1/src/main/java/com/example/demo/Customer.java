@@ -19,6 +19,9 @@ public class Customer
   public String location;
   //public String lasttitle;
 
+
+  //commant to test git commit
+
   
  
   public Customer(String title ,String description , String location ) 

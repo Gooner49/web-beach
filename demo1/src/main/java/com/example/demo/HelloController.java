@@ -66,5 +66,13 @@ public class HelloController {
 	}
 
 
+	@ResponseBody
+	@GetMapping("/viewDept")
+	public List<String> view3() 
+	{
+		System.out.println("View Model Controller created");
+		return CustomerService.viewonlyDept();
+	}
+
 
 }
