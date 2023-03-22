@@ -58,10 +58,11 @@ public class CustomerService
 		}
 	}
 	
-	public List<String> viewonlyDept ()
+	public HashSet<String> viewonlyDept ()
 	{
 		//List<String> listCust = new ArrayList<String>(); ;
 		List<String> listLoc = new ArrayList<>(); 
+		HashSet<String> hset = new HashSet<String>();
 		try {
 				listCust_loc.clear();
 				custrepo1.findAll().forEach(listCust_loc::add);
@@ -83,14 +84,17 @@ public class CustomerService
 				                           } 
 				 );				
 				//Numbers.forEach((n) -> System.out.println(n));
+				 hset = new HashSet<String>(listLoc);
+				
 
 			}	
-		return listLoc;		
+			return hset;		
+		
 	}	
 	public void updateCategory ()
 	{
 		MongoTemplate mt;
 		System.out.println("n");
-		mt.findOne(null, null)
+		//mt.findOne(null, null)
 	}	
 }
