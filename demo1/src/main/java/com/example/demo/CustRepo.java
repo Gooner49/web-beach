@@ -2,8 +2,8 @@ package com.example.demo;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
-@Repository
+//import org.springframework.stereotype.Repository;
+//@Repository
 public interface CustRepo extends MongoRepository<Customer, String> 
 {
 
