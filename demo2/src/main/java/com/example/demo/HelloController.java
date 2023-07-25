@@ -1,7 +1,7 @@
 package com.example.demo;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +16,6 @@ public class HelloController {
 
 	@Autowired
 	private CustomerService CustomerService;
-
-
 	
 	@GetMapping("/")
 	public String index() 
@@ -36,7 +34,7 @@ public class HelloController {
 	@GetMapping("/viewlist")
 	public String view1() 
 	{
-		System.out.println("View List Controller created");
+		//System.out.println("View List Controller created");
 		return "welcome2";
 	}
 
@@ -44,7 +42,7 @@ public class HelloController {
 	@GetMapping("/login")
 	public String view_login() 
 	{
-		System.out.println("Login state ");
+		//System.out.println("Login state ");
 		return "Login state";
 	}
 
@@ -52,7 +50,7 @@ public class HelloController {
 	@GetMapping("/viewmodel")
 	public List<Customer> view2() 
 	{
-		System.out.println("View Model Controller created");
+		//System.out.println("View Model Controller created");
 		return CustomerService.viewAll();
 	}
 	
@@ -61,10 +59,32 @@ public class HelloController {
 	@PostMapping("/addCust")
 	public void view2(@RequestBody String Text) 
 	{
-		System.out.println("Hello  " + Text);
+		//System.out.println("Hello  " + Text);
     	CustomerService.AddCust(Text);
 	}
 
 
+	@ResponseBody
+	@GetMapping("/viewDept")
+	public HashSet<String> view3() 
+	{
+		//System.out.println("View Model Controller created");
+		return CustomerService.viewonlyDept();
+	}
 
+	/*@ResponseBody
+	@GetMapping("/getTitlelist")
+	public HashSet<String> view4() 
+	{
+		//System.out.println("getTitlelist  Controller called" );
+		return CustomerService.viewbyTitle("Dummy");
+	}*/
+
+	@ResponseBody
+	@GetMapping("/getTitlelist/{titleID}")
+	public HashSet<String> view5(@PathVariable ("titleID") String title) 
+	{
+		System.out.println("getTitlelist  Controller called" +title);
+		return CustomerService.viewbyTitle(title);
+	}
 }

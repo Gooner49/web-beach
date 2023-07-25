@@ -63,6 +63,22 @@ public class HelloController {
     	CustomerService.AddCust(Text);
 	}
 
+	/*@ResponseBody
+	@GetMapping("/login")
+	public String view_login() 
+	{
+		//System.out.println("Login state ");
+		return "Login state";
+	}*/
+	
+	@ResponseBody
+	@GetMapping("/callCust")
+	public String callCust() 
+	{
+		//System.out.println("Hello  " + Text);
+    	return CustomerService.callCust();
+	}
+
 
 	@ResponseBody
 	@GetMapping("/viewDept")

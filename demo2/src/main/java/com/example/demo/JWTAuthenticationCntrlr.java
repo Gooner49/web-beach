@@ -41,7 +41,7 @@ public class JWTAuthenticationCntrlr
 				.loadUserByUsername(authenticationRequest.getUsername());
 
 		final String token = jwtTokenUtil.generateToken(userDetails);
-
+		System.out.println("Hello from Security controller " );
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
 

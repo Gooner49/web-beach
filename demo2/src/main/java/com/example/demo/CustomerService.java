@@ -4,16 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
-//import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.springframework.data.mongodb.core.MongoTemplate;
 //org.springframework.data.mongodb.core.query.Criteria
-//import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.web.reactive.function.client.WebClient;
-//import org.springframework.web.reactive.function.client.WebClient.*;
-//import reactor.core.publisher.Mono;
+import java.util.List;
 import java.util.*;
 
 @Service
@@ -66,26 +64,6 @@ public class CustomerService
 		{
 			throw new RuntimeException(e);
 		}
-	}
-
-	public String callCust()
-	{
-		/*List<String> listCust = new ArrayList<String>(); ;
-		List<String> listLoc = new ArrayList<>(); 
-		HashSet<String> hset = new HashSet<String>();
-		*/
-       //String responseBody = responseSpec.bodyToMono(String.class).block();
-		
-		WebClient client1 = WebClient.create();
-
-		    String responseSpec = client1.get()
-			.uri("http://localhost:8082/viewlist")
-			.retrieve()
-			.bodyToMono(String.class)
-            .block();
-		
-       //System.out.println("Hit  from API 2 " +responseSpec );
-		return responseSpec;
 	}
 	
 	public HashSet<String> viewonlyDept ()
