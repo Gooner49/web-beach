@@ -43,6 +43,7 @@ public class HelloController {
 	public String view_login() 
 	{
 		//System.out.println("Login state ");
+		System. out. println("Current JVM version - " + System. getProperty("java.version"));
 		return "Login state";
 	}
 
