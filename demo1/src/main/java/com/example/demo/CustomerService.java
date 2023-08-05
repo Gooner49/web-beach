@@ -73,8 +73,8 @@ public class CustomerService
 		/*List<String> listCust = new ArrayList<String>(); ;
 		List<String> listLoc = new ArrayList<>(); 
 		HashSet<String> hset = new HashSet<String>();
-		*/
-       //String responseBody = responseSpec.bodyToMono(String.class).block();
+		
+       String responseBody = responseSpec.bodyToMono(String.class).block();
 		
 		WebClient client1 = WebClient.create();
 
@@ -83,9 +83,9 @@ public class CustomerService
 			.retrieve()
 			.bodyToMono(String.class)
             .block();
-		
+		*/
        //System.out.println("Hit  from API 2 " +responseSpec );
-		return responseSpec;
+		return "responseSpec";
 	}
 	
 	public HashSet<String> viewonlyDept ()
