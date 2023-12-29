@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
 @Controller
+@RequestMapping("/eurekademob")
 @CrossOrigin(origins="*")
 public class HelloController {
 
@@ -23,7 +25,7 @@ public class HelloController {
 		return "index";
 	}
 	//@ResponseBody
-	@GetMapping("welcome")
+	@GetMapping("/welcome")
 	public String welcome()
 	{
 		System.out.println("Welcome");
@@ -35,7 +37,7 @@ public class HelloController {
 	public String view1() 
 	{
 		//System.out.println("View List Controller created");
-		return "welcome2";
+		return "welcome client demob";
 	}
 
 	@ResponseBody
@@ -43,8 +45,8 @@ public class HelloController {
 	public String view_login() 
 	{
 		//System.out.println("Login state ");
-		System. out. println("Current JVM version - " + System. getProperty("java.version"));
-		return "Login state";
+		String S1 = "client demob , Current JVM version :- "+ System. getProperty("java.version");
+		return S1;
 	}
 
 	@ResponseBody

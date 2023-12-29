@@ -11,7 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.List;
+
 import java.util.*;
 
 @Service
@@ -31,6 +31,20 @@ public class CustomerService
 	{
 				
 	}
+	
+	public String viewAll_str()
+	{
+		return "listCust _aclient";		
+	} 
+
+
+	public String viewClientx()
+	{
+		return "listCust _aclient";		
+	} 
+
+
+
 	public List<Customer> viewAll()
 	{
 	    try {
@@ -51,7 +65,7 @@ public class CustomerService
 
 	public void AddCust (String ps)
 	{
-		System.out.println("Starting to add customer  " +ps);
+		/*System.out.println("Starting to add customer  " +ps);
 		
 		ObjectMapper objectMapper1 = new ObjectMapper();
 		try {
@@ -63,7 +77,7 @@ public class CustomerService
 		catch (JsonProcessingException e) 
 		{
 			throw new RuntimeException(e);
-		}
+		}*/
 	}
 	
 	public HashSet<String> viewonlyDept ()
@@ -71,6 +85,12 @@ public class CustomerService
 		//List<String> listCust = new ArrayList<String>(); ;
 		List<String> listLoc = new ArrayList<>(); 
 		HashSet<String> hset = new HashSet<String>();
+
+		hset.add("One");    
+		hset.add("Two");    
+		hset.add("Three");  
+
+		/*
 		try {
 				listCust_loc.clear();
 				custrepo1.findAll().forEach(listCust_loc::add);
@@ -90,7 +110,7 @@ public class CustomerService
 				 );				
 				//Numbers.forEach((n) -> System.out.println(n));
 				 hset = new HashSet<String>(listLoc);
-			}	
+			}	*/
 			return hset;		
 	}	
 	public HashSet<String> viewbyTitle (String category1)
@@ -104,7 +124,7 @@ public class CustomerService
 		hset.add("Two");    
 		hset.add("Three");  
 		
-		//mt1.findBy
+		/*mt1.findBy
 		try
 		{
 			Query query1 = new Query();
@@ -126,7 +146,7 @@ public class CustomerService
 				                           } 
 				 );				
 				//Numbers.forEach((n) -> System.out.println(n));
-				 hset1 = new HashSet<String>(listLoc);
-		return hset1; 
+				 hset1 = new HashSet<String>(listLoc);*/
+		return hset; 
 	}	
 }

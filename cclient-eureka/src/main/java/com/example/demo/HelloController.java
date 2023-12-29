@@ -13,7 +13,7 @@ import java.util.*;
 
 @Controller
 @CrossOrigin(origins="*")
-@RequestMapping("/demoa")
+@RequestMapping("/democ")
 public class HelloController 
 {
 
@@ -38,7 +38,7 @@ public class HelloController
 	public String view1() 
 	{
 		//System.out.println("View List Controller created");
-		return CustomerService.viewClientx();
+		return "welcome2";
 	}
 
 	@ResponseBody
