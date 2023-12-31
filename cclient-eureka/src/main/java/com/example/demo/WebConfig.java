@@ -1,5 +1,5 @@
 package com.example.demo;
-/*
+
 import org.springframework.context.annotation.Configuration;
 import java.util.Collections;
 import java.util.Collection;
@@ -8,9 +8,9 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 //import MongoDB.Driver.Core.Configuration.ConnectionString;
 import com.mongodb.MongoClientSettings;
-*/
 
-public class MongoConfig {
+@Configuration
+public class WebConfig {
 
    /* @Bean
     public MongoClient mongo() {
@@ -20,13 +20,16 @@ public class MongoConfig {
           .build();
         
         return MongoClients.create(mongoClientSettings);
+
     }
 
     @Bean
     public MongoTemplate mongoTemplate() throws Exception {
         return new MongoTemplate(mongo(), "test");
     }
- 
 */
+   
+ 
+
 
 }

@@ -8,15 +8,15 @@ spring:
         - id: democlienta
           uri: lb://democlienta
           predicates:
-            - Path=/order/**
+            - Path=/democlienta/**
         - id: democlientd
           uri: lb://PAYMENT-SERVICE
           predicates:
-            - Path=/payment/**
+            - Path=/payment-service/**
         - id: democlientc
           uri: lb://democlientc
           predicates:
-            - Path=/payment/**
+            - Path=/democlientc/**
     
 eureka:
   client:

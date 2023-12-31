@@ -13,7 +13,7 @@ import java.util.*;
 
 @Controller
 @CrossOrigin(origins="*")
-@RequestMapping("/demoa")
+@RequestMapping("/democlienta")
 public class HelloController 
 {
 
@@ -26,11 +26,11 @@ public class HelloController
 		return "index";
 	}
 	//@ResponseBody
-	@GetMapping("welcome")
+	@GetMapping("/welcome")
 	public String welcome()
 	{
 		System.out.println("Welcome");
-		return "welcome";
+		return "welcome demoa";
 	}
 
 	@ResponseBody
@@ -46,7 +46,7 @@ public class HelloController
 	public String view_login() 
 	{
 		//System.out.println("Login state ");
-		return "Login state";
+		return "Login state demoa";
 	}
 
 	@ResponseBody

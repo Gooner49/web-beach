@@ -1,6 +1,8 @@
 package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 //import org.springframework.data.domain.Sort;
+//import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -11,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.*;
 
@@ -21,7 +24,8 @@ public class CustomerService
 	List<Customer> listCust_loc = new ArrayList<>(); 
 
 	@Autowired
-	private MongoTemplate mt1 ;
+	@LoadBalanced
+	private WebClient.Builder WebClientBuilder;
 	//AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 
 	
@@ -40,7 +44,20 @@ public class CustomerService
 
 	public String viewClientx()
 	{
-		return "listCust _aclient";		
+		/*String s1 =  WebClient.get()
+						.uri("http://democlientc/democlientc/login")
+						.retrieve()
+						.bodyToMono(String.class)
+						.block();
+		
+		return "listCust _aclient";
+		return s1;		*/
+		return WebClientBuilder.build()
+						.get()
+						.uri("http://democlientc/democlientc/login")
+						.retrieve()
+						.bodyToMono(String.class)
+						.block();
 	} 
 
 
