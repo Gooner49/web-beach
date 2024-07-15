@@ -13,7 +13,7 @@ import java.util.*;
 
 @Controller
 @CrossOrigin(origins="*")
-@RequestMapping("/democlientc")
+//@RequestMapping("/democlientc")
 public class HelloController 
 {
 
@@ -75,13 +75,13 @@ public class HelloController
 		return CustomerService.viewonlyDept();
 	}
 
-	/*@ResponseBody
+	@ResponseBody
 	@GetMapping("/getTitlelist")
-	public HashSet<String> view4() 
+	public List<Customer> view4() 
 	{
-		//System.out.println("getTitlelist  Controller called" );
-		return CustomerService.viewbyTitle("Dummy");
-	}*/
+		System.out.println("getTitlelist  Controller called" );
+		return CustomerService.viewAll();
+	}
 
 	@ResponseBody
 	@GetMapping("/getTitlelist/{titleID}")

@@ -20,18 +20,25 @@ public class CustomerService
 	List<Customer> listCust = new ArrayList<>(); 
 	List<Customer> listCust_loc = new ArrayList<>(); 
 
-	@Autowired
-	private MongoTemplate mt1 ;
+	//@Autowired
+	//private MongoTemplate mt1 ;
 	//AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 
 	
-	@Autowired
-	CustRepo custrepo1;
+	//@Autowired
+	//CustRepo custrepo1;
+    
+    @Autowired
+    CustRepo custrepo1;
+
+
     public CustomerService () 
 	{
 				
 	}
-	
+
+
+
 	public String viewAll_str()
 	{
 		return "listCust _aclient";		
@@ -42,12 +49,12 @@ public class CustomerService
 	public List<Customer> viewAll()
 	{
 	    try {
-			listCust.clear();
-			custrepo1.findAll().forEach(listCust::add);;
+    	//		listCust.clear();
+   			custrepo1.findBytitle("test").forEach(listCust::add);;
 			//groceryItemRepo.findAll().forEach(item -> System.out.println(getItemDetails(item)));
 		}
 		catch(NullPointerException nlx){
-			System.out.println("Null pointer exception detected" +nlx.toString());
+			System.out.println("Null pointer exception detected when accessing database" +nlx.toString());
 			nlx.printStackTrace();
 		}
 		finally 
@@ -59,7 +66,7 @@ public class CustomerService
 
 	public void AddCust (String ps)
 	{
-		/*System.out.println("Starting to add customer  " +ps);
+		/*System.out.println("Starting to add customer  " +ps);s
 		
 		ObjectMapper objectMapper1 = new ObjectMapper();
 		try {

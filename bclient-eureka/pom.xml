@@ -9,8 +9,8 @@
 		<!--<relativePath/>  lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>demob-app</artifactId>
+	<version>0.1</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -130,6 +130,17 @@
 					<mainClass>com.example.demo.DemoApplication</mainClass>
 					<start-Class>com.example.demo.DemoApplication</start-Class>
 				</configuration>
+				<executions>
+			    <execution>
+			        <id>repackage</id>
+			        <goals>
+			            <goal>repackage</goal>
+			        </goals>
+			        <configuration>
+			            <finalName>NewJarName</finalName>
+			        </configuration>
+			    </execution>
+			</executions>   
 			</plugin>
 		</plugins>
 	</pluginManagement>

@@ -11,7 +11,7 @@ public class Customer_UI
 {
 
  
-  public String title;
+ /* public String title;
   public String description;
   public String location;
   //public String lasttitle;
@@ -39,7 +39,7 @@ public class Customer_UI
 
   public String getlocation() {
 		return location;
-	}
+	}*/
 
 
 }

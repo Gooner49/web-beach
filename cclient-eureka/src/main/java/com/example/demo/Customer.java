@@ -1,34 +1,38 @@
 package com.example.demo;
-//import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Table;
 import org.springframework.data.mongodb.core.mapping.Document;
 //import com.fasterxml.jackson.annotation.JsonProperty;
 //import com.fasterxml.jackson.annotation.JsonCreator;
 //import javax.persistence.Id;
 import java.math.BigInteger;  
 @Entity
-@Document(collection = "customer")
+@Table(name = "persons")
 
 public class Customer
 {
 
-//  @Id
+  @Id
+  //@Column(name = "LastName")
   public BigInteger Custid;
+
+  @Column(name = "City")
   public String title;
-  public String description;
+
+  //@Column(name = "FirstName")
+  //public String description;
+
+  @Column(name = "Address")
   public String location;
-  //public String lasttitle;
-
-
-  //commant to test git commit
-
   
  
-  public Customer(String title ,String description , String location ) 
+  public Customer(String title  , String location ) 
   {
     //this.Custid = Custid;        
     this.title = title;
-    this.description = description;
+    //this.description = description;
     this.location = location;
     //this.lasttitle = lasttitle;
   }
@@ -38,9 +42,9 @@ public class Customer
 		return title;
 	}
 
-  public String getdescription() {
-		return description;
-	}
+  //public String getdescription() {
+	//	return description;
+	// }
 
   public String getlocation() {
 		return location;
