@@ -49,8 +49,8 @@ public class CustomerService
 	public List<Customer> viewAll()
 	{
 	    try {
-    	//		listCust.clear();
-   			custrepo1.findBytitle("test").forEach(listCust::add);;
+    		listCust.clear();
+   			custrepo1.findAll().forEach(listCust::add);;
 			//groceryItemRepo.findAll().forEach(item -> System.out.println(getItemDetails(item)));
 		}
 		catch(NullPointerException nlx){
@@ -66,6 +66,26 @@ public class CustomerService
 
 	public void AddCust (String ps)
 	{
+		/*System.out.println("Starting to add customer  " +ps);s
+		
+		ObjectMapper objectMapper1 = new ObjectMapper();
+		try {
+				Customer_UI cust_add = objectMapper1.readValue(ps, Customer_UI.class);
+				System.out.println("Adding customer with title :  " +cust_add.gettitle());
+				Customer cust_add_db = new Customer(cust_add.gettitle(), cust_add.getdescription(), cust_add.getlocation());
+				custrepo1.save(cust_add_db);
+		} 
+		catch (JsonProcessingException e) 
+		{
+			throw new RuntimeException(e);
+		}*/
+	}
+
+	public void AddCust (String desc , String location , String title)
+	{
+		
+		String Str2 = "default";
+		
 		/*System.out.println("Starting to add customer  " +ps);s
 		
 		ObjectMapper objectMapper1 = new ObjectMapper();

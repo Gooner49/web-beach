@@ -26,6 +26,10 @@ public class Customer
 
   @Column(name = "Address")
   public String location;
+
+  public Customer() 
+  {  }
+
   
  
   public Customer(String title  , String location ) 
