@@ -38,7 +38,6 @@ public class CustomerService
 	}
 
 
-
 	public String viewAll_str()
 	{
 		return "listCust _aclient";		
@@ -134,16 +133,16 @@ public class CustomerService
 			}	*/
 			return hset;		
 	}	
-	public HashSet<String> viewbyTitle (String category1)
-	{
-		HashSet<String> hset = new HashSet<String>();
-		List<String> listLoc = new ArrayList<>(); 
-		List<Customer> cust_list = new ArrayList<>(); 
-		HashSet<String> hset1 = new HashSet<String>();
 
-		hset.add("One");    
-		hset.add("Two");    
-		hset.add("Three");  
+	public List<Customer> viewbyTitle (String category1)
+	{
+		//HashSet<String> hset = new HashSet<String>();
+		//List<String> listLoc = new ArrayList<>(); 
+		List<Customer> cust_list = new ArrayList<>(); 
+		//HashSet<String> hset1 = new HashSet<String>();
+		Customer cs1 = new Customer();
+
+		cust_list = custrepo1.findBytitle(category1);
 		
 		/*mt1.findBy
 		try
@@ -168,6 +167,6 @@ public class CustomerService
 				 );				
 				//Numbers.forEach((n) -> System.out.println(n));
 				 hset1 = new HashSet<String>(listLoc);*/
-		return hset; 
+		return cust_list; 
 	}	
 }

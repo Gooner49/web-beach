@@ -85,7 +85,7 @@ public class HelloController
 
 	@ResponseBody
 	@GetMapping("/getTitlelist/{titleID}")
-	public HashSet<String> view5(@PathVariable ("titleID") String title) 
+	public List<Customer>  view5(@PathVariable ("titleID") String title) 
 	{
 		System.out.println("getTitlelist  Controller called" +title);
 		return CustomerService.viewbyTitle(title);

@@ -21,14 +21,16 @@ public class Customer
   @Column(name = "City")
   public String title;
 
-  //@Column(name = "FirstName")
-  //public String description;
+  @Column(name = "Firstname")
+  public String description;
 
   @Column(name = "Address")
   public String location;
 
   public Customer() 
-  {  }
+  {  
+    
+  }
 
   
  
