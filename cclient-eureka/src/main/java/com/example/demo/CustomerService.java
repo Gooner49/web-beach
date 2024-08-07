@@ -47,12 +47,14 @@ public class CustomerService
 
 	public List<Customer> viewAll()
 	{
-	    try {
+	    try 
+		{
     		listCust.clear();
    			custrepo1.findAll().forEach(listCust::add);;
 			//groceryItemRepo.findAll().forEach(item -> System.out.println(getItemDetails(item)));
 		}
-		catch(NullPointerException nlx){
+		catch(NullPointerException nlx)
+		{
 			System.out.println("Null pointer exception detected when accessing database" +nlx.toString());
 			nlx.printStackTrace();
 		}
@@ -136,13 +138,11 @@ public class CustomerService
 
 	public List<Customer> viewbyTitle (String category1)
 	{
-		//HashSet<String> hset = new HashSet<String>();
-		//List<String> listLoc = new ArrayList<>(); 
 		List<Customer> cust_list = new ArrayList<>(); 
-		//HashSet<String> hset1 = new HashSet<String>();
-		Customer cs1 = new Customer();
-
+		Customer s1 = new Customer();
 		cust_list = custrepo1.findBytitle(category1);
+
+		
 		
 		/*mt1.findBy
 		try
@@ -151,22 +151,22 @@ public class CustomerService
 			query1.addCriteria(Criteria.where("description").is(category1));
 			
 			//query1.with(Sort.by(Sort.Direction.ASC, "description"));
-			cust_list = mt1.find(query1,Customer.class );
+			//cust_list = mt1.find(query1,Customer.class );
 			//int size = cust_list.size();
 			//System.out.println("Size from Mongo hit is " +size);
 		}
 		catch(NullPointerException e)
 		{	
 			System.out.println("Hit  from Mongo NPE " );
-		}
+		} */
 		cust_list.forEach ((n)  ->
 				                           { 
-												String s1 = n.title;
-												listLoc.add(s1);
+											     n.setDescription("modified");;
+												 custrepo1.save(n);
 				                           } 
 				 );				
 				//Numbers.forEach((n) -> System.out.println(n));
-				 hset1 = new HashSet<String>(listLoc);*/
+				// hset1 = new HashSet<String>(listLoc) 
 		return cust_list; 
 	}	
 }

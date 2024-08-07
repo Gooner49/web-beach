@@ -4,13 +4,19 @@ import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.Table;
 import org.springframework.data.mongodb.core.mapping.Document;
-//import com.fasterxml.jackson.annotation.JsonProperty;
-//import com.fasterxml.jackson.annotation.JsonCreator;
-//import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import java.math.BigInteger;  
 @Entity
 @Table(name = "persons")
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Customer
 {
 
@@ -26,35 +32,5 @@ public class Customer
 
   @Column(name = "Address")
   public String location;
-
-  public Customer() 
-  {  
-    
-  }
-
-  
- 
-  public Customer(String title  , String location ) 
-  {
-    //this.Custid = Custid;        
-    this.title = title;
-    //this.description = description;
-    this.location = location;
-    //this.lasttitle = lasttitle;
-  }
-
-
-  public String gettitle() {
-		return title;
-	}
-
-  //public String getdescription() {
-	//	return description;
-	// }
-
-  public String getlocation() {
-		return location;
-	}
-
 
 }
