@@ -90,6 +90,4 @@ public class HelloController
 		System.out.println("getTitlelist  Controller called" +title);
 		return CustomerService.viewbyTitle(title);
 	}
-
-	
 }

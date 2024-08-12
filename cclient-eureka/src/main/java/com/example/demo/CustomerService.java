@@ -1,24 +1,23 @@
 package com.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-//import org.springframework.data.mongodb.core.MongoTemplate;
-//org.springframework.data.mongodb.core.query.Criteria
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 @Service
 public class CustomerService
 {
 	List<Customer> listCust = new ArrayList<>(); 
 	List<Customer> listCust_loc = new ArrayList<>(); 
+	Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
 	//@Autowired
 	//private MongoTemplate mt1 ;
@@ -141,7 +140,7 @@ public class CustomerService
 		List<Customer> cust_list = new ArrayList<>(); 
 		Customer s1 = new Customer();
 		cust_list = custrepo1.findBytitle(category1);
-
+		log.debug("Response {}" +category1);
 		
 		
 		/*mt1.findBy
