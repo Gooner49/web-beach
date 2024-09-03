@@ -55,7 +55,6 @@ public class HelloController
 		return CustomerService.viewAll_str();
 	}
 	
-	
 	@ResponseBody
 	@PostMapping("/addCust")
 	public void view2(@RequestBody String Text) 
@@ -63,7 +62,6 @@ public class HelloController
 		//System.out.println("Hello  " + Text);
     	CustomerService.AddCust(Text);
 	}
-
 
 	@ResponseBody
 	@GetMapping("/viewDept")
