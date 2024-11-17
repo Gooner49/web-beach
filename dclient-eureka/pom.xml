@@ -143,7 +143,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>spring-boot-web</finalName>
+		<finalName>spring-boot-aws</finalName>
 		<pluginManagement>
 		<plugins>
 			<plugin>

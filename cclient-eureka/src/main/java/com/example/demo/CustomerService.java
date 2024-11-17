@@ -10,7 +10,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.*;
-import java.util.logging.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 @Service
 public class CustomerService
