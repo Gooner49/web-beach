@@ -26,8 +26,7 @@ public class dbConfig
 
     @Bean(name = "datasource2")
     @ConfigurationProperties("database2.datasource")
-    @Primary
-    public DataSource dataSource2()
+        public DataSource dataSource2()
     {
         return DataSourceBuilder.create().build();
     }
